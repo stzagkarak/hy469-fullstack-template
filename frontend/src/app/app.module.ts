@@ -8,6 +8,9 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { environment } from 'src/environments/environment';
 import { ItemShopComponent } from './pages/item-shop/item-shop.component';
 import { ItemPreviewComponent } from './pages/item-shop/item-preview/item-preview.component';
+import { PingmeComponent } from './pages/pingme/pingme/pingme.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -15,13 +18,16 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     AppComponent,
     TasksComponent,
     ItemShopComponent,
-    ItemPreviewComponent
+    ItemPreviewComponent,
+    PingmeComponent // HY469 - 2023 SOCKET EXAMPLE
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule, // HY469 - 2023 SOCKET EXAMPLE
+    ReactiveFormsModule // HY469 - 2023 SOCKET EXAMPLE
   ],
   providers: [],
   bootstrap: [AppComponent]

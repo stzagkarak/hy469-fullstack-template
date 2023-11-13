@@ -20,7 +20,7 @@ export class ExampleController {
      * Sens a example message back as a response
      */
     public getExample(req: Request, res: Response) {
-        this.logger.debug('getExample request');
+        //this.logger.debug('getExample request');
         res.json({ message: 'hello there!' });
     }
 }

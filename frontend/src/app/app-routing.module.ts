@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ItemShopComponent } from './pages/item-shop/item-shop.component';
+import { PingmeComponent } from './pages/pingme/pingme/pingme.component';
 
 const routes: Routes = [
   // { path: 'socket-events', loadChildren: () => import('./pages/socket-events/socket-events.module').then(m => m.SocketEventsModule) },
   { path: 'tasks', loadChildren: () => import('./pages/tasks/tasks.module').then(m => m.TasksModule) },
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
   { path: 'item-shop', component: ItemShopComponent},
+  { path: 'pingme', component: PingmeComponent}, // HY469 - 2023 SOCKET EXAMPLE
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

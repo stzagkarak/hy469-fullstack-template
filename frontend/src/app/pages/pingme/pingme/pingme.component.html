@@ -1,0 +1,35 @@
+<!--
+  HY469 - 2023 - 2024 SOCKET EXAMPLE
+-->
+
+<div class="container mt-5">
+    <div class="scrollable-container pb-2 pr-2">
+        AVAILABLE CLIENTS:
+        <div class="task-container px-3 pt-3 pb-3 mt-1" *ngFor="let cl of clients">
+            {{cl}}
+        </div>  
+    </div>  
+</div>  
+<div class="task-form mt-2">
+    <form #taskForm="ngForm" (ngSubmit)="ping_someone()">
+        <div>
+            <label for="fromFieldInput">
+              Who to ping:
+            </label>
+            <input class="form-control mt-1" id="fromFieldInput" [(ngModel)]="from" name="fromField" />
+            <div class="task-btn mt-1">
+              <button type="submit" class="btn btn-primary pull-right">
+                Send
+              </button>
+            </div>
+          </div>
+    </form>
+</div>
+<div class="container mt-5">
+    <div class="scrollable-container pb-2 pr-2">
+        Last Ping:
+        <div class="task-container px-3 pt-3 pb-3 mt-1">
+            Client: {{lastPing.from}} -- Time: {{lastPing.timestamp}}
+        </div>  
+    </div>  
+</div>
